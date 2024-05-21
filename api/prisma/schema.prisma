@@ -14,3 +14,15 @@ datasource db {
   url        = env("DATABASE_URL")
   extensions = [vector()]
 }
+
+model Memo {
+  id        Int                    @id @default(autoincrement())
+  // メモの内容
+  content   String
+  // pgvectorで定義されるvector typeのデータ
+  vector    Unsupported("vector")?
+  // 作成日時
+  createdAt DateTime               @default(now()) @map("created_at")
+  // 更新日時
+  updatedAt DateTime               @updatedAt @map("updated_at")
+}
