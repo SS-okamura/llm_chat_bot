@@ -12,7 +12,7 @@ export class MemoService {
 
   constructor(private readonly prisma: PrismaService) {}
 
-  async search(query: string): Promise<Memo[]> {
+  async search(query: string): Promise<Memo> {
     this.logger.log(`search`, { query });
     // vector store
     const vectorStore = PrismaVectorStore.withModel<Memo>(this.prisma).create(
@@ -46,6 +46,6 @@ export class MemoService {
       });
       memoList.push(memo);
     }
-    return memoList;
+    return memoList[0];
   }
 }
