@@ -30,7 +30,7 @@ export default function Home() {
           {aiMessages[index] ? (
             <div className="chat chat-start">
               <div className="chat-image avatar">
-                <div className="w-10 rounded-full">
+                <div className="w-12 rounded-full">
                   <img
                     alt="Tailwind CSS chat bubble component"
                     src="https://icon-pit.com/wp-content/uploads/2020/01/brain_ai_5286.png"
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="fixed bottom-5 w-full flex justify-center items-center space-x-2">
           <textarea
             placeholder="入力してください"
-            className="textarea textarea-primary textarea-xs w-4/5"
+            className=" text-xl textarea textarea-primary textarea-xs w-4/5"
             value={message}
             onChange={(e) => {
               setMessage(e.target.value);
